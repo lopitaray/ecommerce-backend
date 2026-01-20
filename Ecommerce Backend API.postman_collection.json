@@ -1,0 +1,452 @@
+{
+  "info": {
+    "_postman_id": "078ee106-ac2d-407b-a5b2-ec145bb36099",
+    "name": "Ecommerce Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51386785",
+    "_collection_link": "https://go.postman.co/collection/51386785-078ee106-ac2d-407b-a5b2-ec145bb36099?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "http://localhost:5000/api/auth/signup",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Admin User\",\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"admin\"\r\n}\r\n    ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/signup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/auth/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/protected",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmRkMTdlZGNhMzQ2ODYxM2ZmMmQ0NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODgwNTA5NCwiZXhwIjoxNzY4ODkxNDk0fQ.5m5RrIb2uKsYvE12rBc2vWh1D8chiQlWMN6fdlARlLs",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/protected",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "protected"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/products",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmRkMTdlZGNhMzQ2ODYxM2ZmMmQ0NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODgwNTA5NCwiZXhwIjoxNzY4ODkxNDk0fQ.5m5RrIb2uKsYvE12rBc2vWh1D8chiQlWMN6fdlARlLs",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"iPhone 15\",\r\n  \"description\": \"Latest Apple phone\",\r\n  \"price\": 79999,\r\n  \"category\": \"Electronics\",\r\n  \"rating\": 4.5,\r\n  \"stock\": 10\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/products",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/products",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products?keyword=iphone&category=Electronics&minPrice=70000&page=1&limit=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "keyword",
+              "value": "iphone"
+            },
+            {
+              "key": "category",
+              "value": "Electronics"
+            },
+            {
+              "key": "minPrice",
+              "value": "70000"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/cart/add",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmRkMTdlZGNhMzQ2ODYxM2ZmMmQ0NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODgwNTA5NCwiZXhwIjoxNzY4ODkxNDk0fQ.5m5RrIb2uKsYvE12rBc2vWh1D8chiQlWMN6fdlARlLs",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"productId\": \"696e2e66deb249096c960b75\",\r\n  \"quantity\": 2\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cart/add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cart",
+            "add"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/cart",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmRkMTdlZGNhMzQ2ODYxM2ZmMmQ0NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODgwNTA5NCwiZXhwIjoxNzY4ODkxNDk0fQ.5m5RrIb2uKsYvE12rBc2vWh1D8chiQlWMN6fdlARlLs",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/cart",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cart"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/cart/update",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmRkMTdlZGNhMzQ2ODYxM2ZmMmQ0NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODgwNTA5NCwiZXhwIjoxNzY4ODkxNDk0fQ.5m5RrIb2uKsYvE12rBc2vWh1D8chiQlWMN6fdlARlLs",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"productId\":\"696e2e66deb249096c960b75\",\r\n  \"quantity\": 5\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cart/update",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cart",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/cart/remove/PASTE_PRODUCT_ID",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmRkMTdlZGNhMzQ2ODYxM2ZmMmQ0NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODgwNTA5NCwiZXhwIjoxNzY4ODkxNDk0fQ.5m5RrIb2uKsYvE12rBc2vWh1D8chiQlWMN6fdlARlLs",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/cart/remove/PASTE_PRODUCT_ID",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cart",
+            "remove",
+            "PASTE_PRODUCT_ID"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/orders/place",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmRkMTdlZGNhMzQ2ODYxM2ZmMmQ0NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODgwNTA5NCwiZXhwIjoxNzY4ODkxNDk0fQ.5m5RrIb2uKsYvE12rBc2vWh1D8chiQlWMN6fdlARlLs",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/orders/place",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "orders",
+            "place"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/orders",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmRkMTdlZGNhMzQ2ODYxM2ZmMmQ0NiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2ODgwNTA5NCwiZXhwIjoxNzY4ODkxNDk0fQ.5m5RrIb2uKsYvE12rBc2vWh1D8chiQlWMN6fdlARlLs",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://ecommerce-backend-9v5q.onrender.com",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ecommerce-backend-9v5q.onrender.com",
+          "protocol": "https",
+          "host": [
+            "ecommerce-backend-9v5q",
+            "onrender",
+            "com"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
